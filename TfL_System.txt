@@ -1,0 +1,40 @@
+package tfl_system;
+public class TfL_System {
+
+    public static void main(String[] args) {
+        		
+         ClockClass cc = new ClockClass();                            //======== Calling the time class
+         String weekDay = null;
+         
+         switch (cc.atualWeekDay){                                        //======== Loading the days of week
+             
+             case 1: weekDay = "Sunday";
+             break;
+             case 2: weekDay = "Monday";
+             break;
+             case 3: weekDay = "Tuesday";
+             break;
+             case 4: weekDay = "Wednesday";
+             break;
+             case 5: weekDay = "Thursday";
+             break;
+             case 6: weekDay = "Friday";
+             break;
+             case 7: weekDay = "Saturday";
+             break;
+         }
+
+         String On_Peak = "You are on peak time",                   //======== Messages about the peak time
+                   Off_Peak = "You are not on peak time";
+         
+         if (cc.Peak_Time() == 1)
+             System.out.println("Hi. Today is "+weekDay+"!\nAtual Hour:  "+cc.atualHour+":"+cc.atualMinute+"  ===>  "+On_Peak);	//==== Clock on
+         if (cc.Peak_Time() == 0)
+             System.out.println("Hi. Today is "+weekDay+"!\nAtual Hour:  "+cc.atualHour+":"+cc.atualMinute+"  ===>  "+Off_Peak);	//==== Clock off
+		
+        AllZonesClass azc = new AllZonesClass();                    //=============== Calling the zones
+        
+        System.out.println(azc.travelMessage);                       //================ Messages about the travel and prices
+        System.out.println(azc.travelPrice);
+    }
+}
